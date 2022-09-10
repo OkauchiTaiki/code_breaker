@@ -24,7 +24,7 @@ int main()
 	FILE* fp = NULL;
 
 	input_array(random_array, random);
-	printf("%d\n", random);
+	//printf("%d\n", random);
 
 	while (!clear)
 	{
