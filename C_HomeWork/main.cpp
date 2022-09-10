@@ -40,18 +40,19 @@ int main()
 			if (answer_array[i] == random_array[i])
 			{
 				Hit++;
-				continue;
 			}
-			for (int j = 0; j < DIGIT; j++)
+			else
 			{
-				if (i == j)
+				for (int j = 0; j < DIGIT; j++)
 				{
-					continue;
-				}
-				if (answer_array[i] == random_array[j])
-				{
-					Blow++;
-					break;
+					if (i != j)
+					{
+						if (answer_array[i] == random_array[j])
+						{
+							Blow++;
+							break;
+						}
+					}
 				}
 			}
 		}
@@ -93,17 +94,22 @@ int generate_random()
 	int randomNums[DIGIT] = {};
 	for (int i = 0; i < DIGIT; i++)
 	{
+		bool check = true;
 		int randomNum = rand() % 10;
-		randomNums[i] = randomNum;
 		for (int j = 0; j < i ; j++)
 		{
 			if (randomNums[j] == randomNum)
 			{
 				i--;
+				check = false;
 				break;
 			}
 		}
-		randomAll += randomNum * (int)pow(10, i);
+		if (check)
+		{
+			randomNums[i] = randomNum;
+			randomAll += randomNum * (int)pow(10, i);
+		}
 	}
 
 	return randomAll;
