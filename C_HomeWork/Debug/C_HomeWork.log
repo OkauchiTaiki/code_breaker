@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Okauchi\vantan\class\C\C_HomeWork\main.cpp(116,66): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+  C_HomeWork.vcxproj -> C:\Okauchi\vantan\class\C\C_HomeWork\Debug\C_HomeWork.exe
